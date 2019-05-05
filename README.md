@@ -51,10 +51,11 @@ MySQL开启binlog，master id必须配置， binlog的格式必须是row模式
 #### 协议：  
 MySQL主从复制协议， jdk大小端转换  
 
-#### 架构设计：  
+#### 软件架构设计：  
+![image](./doc/binlake-arc.jpg)
 
-wave struct.png
-
+#### 部署架构设计: 
+![image](./doc/binlake-deploy.jpg)
 
 #### 服务无状态设计：    
 整个集群无状态， 任何一次zookeeper当中监听节点下子节点的变更都会从zk上得到通知，并且开始提供服务且保证，针对任何一台MySQL服务， 有且仅有一台wave服务提供 binlog dump
